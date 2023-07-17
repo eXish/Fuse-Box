@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 846c440d35c76e54394cabd5474c8f82
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Array
+    100002: Boole
+    100004: Cube_copie
+    100006: Deckf
+    100008: Deckf1
+    100010: Deckfl_che
+    100012: Licht
+    100014: Loft_NURBS
+    100016: Oil_Tank_1
+    100018: Oil_Tank_2
+    100020: Oil_Tank_3
+    100022: Oil_Tank_4
+    100024: Oil_Tank_5
+    100026: Oil_Tank_6
+    100028: Oil_Tank_7
+    100030: Oil_Tank_8
+    100032: Pipe
+    100034: ring-begre
+    100036: Rundung
+    100038: Rundung_1
+    100040: Rundung_2
+    100042: Sweep_NURB
+    100044: Tube
+    100046: //RootNode
+    400000: Array
+    400002: Boole
+    400004: Cube_copie
+    400006: Deckf
+    400008: Deckf1
+    400010: Deckfl_che
+    400012: Licht
+    400014: Loft_NURBS
+    400016: Oil_Tank_1
+    400018: Oil_Tank_2
+    400020: Oil_Tank_3
+    400022: Oil_Tank_4
+    400024: Oil_Tank_5
+    400026: Oil_Tank_6
+    400028: Oil_Tank_7
+    400030: Oil_Tank_8
+    400032: Pipe
+    400034: ring-begre
+    400036: Rundung
+    400038: Rundung_1
+    400040: Rundung_2
+    400042: Sweep_NURB
+    400044: Tube
+    400046: //RootNode
+    2100000: Mat
+    2300000: Array
+    2300002: Boole
+    2300004: Cube_copie
+    2300006: Deckf
+    2300008: Deckf1
+    2300010: Deckfl_che
+    2300012: Loft_NURBS
+    2300014: Oil_Tank_1
+    2300016: Oil_Tank_2
+    2300018: Oil_Tank_3
+    2300020: Oil_Tank_4
+    2300022: Oil_Tank_5
+    2300024: Oil_Tank_6
+    2300026: Oil_Tank_7
+    2300028: Oil_Tank_8
+    2300030: Pipe
+    2300032: ring-begre
+    2300034: Rundung
+    2300036: Rundung_1
+    2300038: Rundung_2
+    2300040: Sweep_NURB
+    2300042: Tube
+    3300000: Array
+    3300002: Boole
+    3300004: Cube_copie
+    3300006: Deckf
+    3300008: Deckf1
+    3300010: Deckfl_che
+    3300012: Loft_NURBS
+    3300014: Oil_Tank_1
+    3300016: Oil_Tank_2
+    3300018: Oil_Tank_3
+    3300020: Oil_Tank_4
+    3300022: Oil_Tank_5
+    3300024: Oil_Tank_6
+    3300026: Oil_Tank_7
+    3300028: Oil_Tank_8
+    3300030: Pipe
+    3300032: ring-begre
+    3300034: Rundung
+    3300036: Rundung_1
+    3300038: Rundung_2
+    3300040: Sweep_NURB
+    3300042: Tube
+    4300000: Pipe
+    4300002: ring-begre
+    4300004: Array
+    4300006: Oil_Tank_1
+    4300008: Oil_Tank_2
+    4300010: Oil_Tank_3
+    4300012: Oil_Tank_4
+    4300014: Oil_Tank_5
+    4300016: Oil_Tank_6
+    4300018: Oil_Tank_7
+    4300020: Oil_Tank_8
+    4300022: Boole
+    4300024: Cube_copie
+    4300026: Tube
+    4300028: Loft_NURBS
+    4300030: Rundung
+    4300032: Deckf
+    4300034: Sweep_NURB
+    4300036: Rundung_1
+    4300038: Deckf1
+    4300040: Rundung_2
+    4300042: Deckfl_che
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
