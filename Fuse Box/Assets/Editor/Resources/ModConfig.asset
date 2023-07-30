@@ -11,13 +11,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: template
-  title: Template
-  author: 
-  description: "[INSERT FLAVOR TEXT HERE]\n\n[INSERT SOLVING DESCRIPTION HERE]\n\n[INSERT
-    POTENTIAL CREDITS HERE]\n\nThe manual can be found in the manuals folder of the
-    game or at ktane.timwi.de.\n\r\nContact Fartlicker777#9169 on Discord if there
-    are any bugs."
+  id: FuseBox
+  title: The Fuse Box
+  author: me
+  description: "About one of these things should actually be in a fuse box, we just
+    like to be flashy.\r\n\nTo properly experience the awesome-sauceum of this module,
+    you should\n1. Use Windows 10/11.\n2. Go to Settings -> Privacy -> Speech and
+    turn on Online Speech Recognition.\nThis module is possible without it, but it's
+    lame without this setting.\n\nMade for Modding Jam #5: 3 Sentence Manual (no I
+    did not vote for this)\n\neXish helped with a majority of the coding.\n\nThe manual
+    can be found in the manuals folder of the game or at ktane.timwi.de.\n\r\nContact
+    Fartlicker777#9169 on Discord if there are any bugs."
   version: 
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 7e7beed368f38bc4abaab4b6ee859033, type: 3}
