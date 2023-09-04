@@ -32,7 +32,7 @@ public class FuseBoxScript : MonoBehaviour {
    int[] inputButtons = { -1, -1, -1, -1 };
    int presses;
 
-
+   bool WillDictationStrike = true;
    bool DicationFailing;
    
    static int moduleIdCounter = 1;
@@ -88,11 +88,11 @@ public class FuseBoxScript : MonoBehaviour {
       }
       bool[] leftBit = new bool[3];
       bool[] rightBit = new bool[3];
-      for (int i = 0; i < 3; i++) {
-         if (lightColors[i + 1] == 0 || lightColors[i + 1] == 3) {
-            rightBit[i] = true;
-         }
-      }
+
+      rightBit[0] = lightColors[1] == 0 || lightColors[1] == 3;
+      rightBit[1] = lightColors[wireChoices[2]] == 0 || lightColors[wireChoices[2]] == 3;
+      rightBit[2] = lightColors[3] == 0 || lightColors[3] == 3;
+      
       if (wireChoices[0] != 0) {
          leftBit[0] = true;
       }
@@ -162,7 +162,7 @@ public class FuseBoxScript : MonoBehaviour {
       Debug.Log(text);
       text = text.ToLower();
       foreach (string word in bannedWords) {
-         if (text.Contains(word) && powerOn) {
+         if (text.Contains(word) && powerOn && WillDictationStrike) {
             GetComponent<KMBombModule>().HandleStrike();
             Debug.LogFormat("[The Fuse Box #{0}] I heard you say \"{1}\", I don't like that.", moduleId, word);
             break;
@@ -213,9 +213,11 @@ public class FuseBoxScript : MonoBehaviour {
                      moduleSolved = true;
                      GetComponent<KMBombModule>().HandlePass();
 
-                     if (dictationRecognizer != null) {
+                     WillDictationStrike = false;
+
+                     /*if (dictationRecognizer != null) { //Lags a bunch when deactivating
                         CloseDictationEngine();
-                     }
+                     }*/
                      
                      if (TwitchPlaysActive) {
                         buttons[8].OnInteract();
