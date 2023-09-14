@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using System.Text.RegularExpressions;
 using System;
@@ -20,6 +21,10 @@ public class FuseBoxScript : MonoBehaviour {
 
    DictationRecognizer dictationRecognizer;
    string[] bannedWords = { "red", "green", "blue", "yellow", "left", "right", "top", "bottom", "up", "down", "switch", "flash", "simon", "sequence", "wire", "binary", "zero", "one", "two", "three", "four", "arrow", "display", "exotic butters", "height", "uwu", "owo", "position", "press", "cross", "morse", "to", "too" };
+
+   bool MicEnabledForMission = true;
+   
+
    bool powerOn;
    bool opened;
    bool animating;
@@ -47,7 +52,23 @@ public class FuseBoxScript : MonoBehaviour {
       }
    }
 
+   private string GetMissionID () {
+      try {
+         Component gameplayState = GameObject.Find("GameplayState(Clone)").GetComponent("GameplayState");
+         Type type = gameplayState.GetType();
+         FieldInfo fieldMission = type.GetField("MissionToLoad", BindingFlags.Public | BindingFlags.Static);
+         return fieldMission.GetValue(gameplayState).ToString();
+      }
+
+      catch (NullReferenceException) {
+         return "undefined";
+      }
+   }
+
    void Start () {
+      if (GetMissionID() == "mod_ThiccBombs_the47better" && SystemInfo.operatingSystem.ToLower().Contains("windows")) {
+         StartDictationEngine();
+      }
       lightColors[0] = UnityEngine.Random.Range(0, 4);
       for (int i = 1; i < 4; i++) {
          do {
@@ -124,6 +145,7 @@ public class FuseBoxScript : MonoBehaviour {
       dictationRecognizer.DictationComplete += DictationRecognizer_OnDictationComplete;
       dictationRecognizer.DictationError += DictationRecognizer_OnDictationError;
       dictationRecognizer.Start();
+      MicEnabledForMission = true;
    }
 
    private void CloseDictationEngine () {
@@ -171,12 +193,17 @@ public class FuseBoxScript : MonoBehaviour {
    }
    private void DictationRecognizer_OnDictationError (string error, int hresult) {
       Debug.Log("Dictation error: " + error);
+      MicEnabledForMission = false;
    }
 
    void PressButton (KMSelectable pressed) {
       if (!animating) {
          int index = Array.IndexOf(buttons, pressed);
          if (index == 8) {
+            if (!MicEnabledForMission && GetMissionID() == "mod_ThiccBombs_the47better") {
+               audio.PlaySoundAtTransform("Error", pressed.transform);
+               return;
+            }
             audio.PlaySoundAtTransform("metalDoor", transform);
             StartCoroutine(ToggleDoor());
          }
@@ -310,8 +337,9 @@ public class FuseBoxScript : MonoBehaviour {
       StartCoroutine(LightCycle());
 
 
-
-      StartDictationEngine();
+      if (GetMissionID() != "mod_ThiccBombs_the47better") {
+         StartDictationEngine();
+      }
       
       animating = false;
       powerOn = true;
