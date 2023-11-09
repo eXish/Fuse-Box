@@ -201,7 +201,7 @@ public class FuseBoxScript : MonoBehaviour {
          int index = Array.IndexOf(buttons, pressed);
          if (index == 8) {
             if (!MicEnabledForMission && GetMissionID() == "mod_ThiccBombs_the47better") {
-               audio.PlaySoundAtTransform("Error", pressed.transform);
+               audio.PlaySoundAtTransform("Error", transform);
                return;
             }
             audio.PlaySoundAtTransform("metalDoor", transform);
@@ -337,7 +337,7 @@ public class FuseBoxScript : MonoBehaviour {
       StartCoroutine(LightCycle());
 
 
-      if (GetMissionID() != "mod_ThiccBombs_the47better") {
+      if (GetMissionID() != "mod_ThiccBombs_the47better" && SystemInfo.operatingSystem.ToLower().Contains("windows")) {
          StartDictationEngine();
       }
       
