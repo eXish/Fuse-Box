@@ -111,7 +111,7 @@ public class FuseBoxScript : MonoBehaviour {
       bool[] rightBit = new bool[3];
 
       rightBit[0] = lightColors[1] == 0 || lightColors[1] == 3;
-      rightBit[1] = lightColors[Array.IndexOf(wireChoices, 2)] == 0 || lightColors[Array.IndexOf(wireChoices, 2)] == 3;
+      rightBit[1] = lightColors[2] == 0 || lightColors[2] == 3;
       rightBit[2] = lightColors[3] == 0 || lightColors[3] == 3;
       
       if (wireChoices[0] != 0) {
