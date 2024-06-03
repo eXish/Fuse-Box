@@ -395,6 +395,8 @@ public class FuseBoxScript : MonoBehaviour {
             yield return "sendtochaterror The specified set of switch states is invalid!";
             yield break;
          }
+         if (!powerOn || !opened || animating)
+            yield break;
          for (int i = 0; i < 3; i++) {
             if (parameters[1][i].EqualsAny('u', 'U') && switchPos[i] != 1) {
                buttons[i + 1].OnInteract();
@@ -425,6 +427,8 @@ public class FuseBoxScript : MonoBehaviour {
                yield break;
             }
          }
+         if (!powerOn || !opened || animating)
+            yield break;
          for (int i = 0; i < parameters[1].Length; i++) {
             buttons[int.Parse(parameters[1][i].ToString()) + 3].OnInteract();
             yield return new WaitForSeconds(.1f);
