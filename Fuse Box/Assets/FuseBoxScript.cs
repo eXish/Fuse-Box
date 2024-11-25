@@ -19,7 +19,7 @@ public class FuseBoxScript : MonoBehaviour {
    public Transform[] switches;
    public Transform[] wireGroups;
 
-   DictationRecognizer dictationRecognizer;
+   static DictationRecognizer dictationRecognizer;
    string[] bannedWords = { "red", "green", "blue", "yellow", "left", "right", "top", "bottom", "up", "down", "switch", "flash", "simon", "sequence", "wire", "binary", "zero", "one", "two", "three", "four", "arrow", "display", "exotic butters", "height", "uwu", "owo", "position", "press", "cross", "morse", "to", "too" };
 
    bool MicEnabledForMission = true;
@@ -63,6 +63,10 @@ public class FuseBoxScript : MonoBehaviour {
       catch (NullReferenceException) {
          return "undefined";
       }
+   }
+
+   void OnDestroy() {
+      CloseDictationEngine();
    }
 
    void Start () {
@@ -140,7 +144,8 @@ public class FuseBoxScript : MonoBehaviour {
    }
 
    private void StartDictationEngine () {
-      dictationRecognizer = new DictationRecognizer();
+      if (dictationRecognizer == null)
+         dictationRecognizer = new DictationRecognizer();
       dictationRecognizer.DictationResult += DictationRecognizer_OnDictationResult;
       dictationRecognizer.DictationComplete += DictationRecognizer_OnDictationComplete;
       dictationRecognizer.DictationError += DictationRecognizer_OnDictationError;
@@ -157,6 +162,7 @@ public class FuseBoxScript : MonoBehaviour {
             dictationRecognizer.Stop();
          }
          dictationRecognizer.Dispose();
+         dictationRecognizer = null;
       }
    }
 
